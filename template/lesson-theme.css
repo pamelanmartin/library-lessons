@@ -1,0 +1,268 @@
+/* ==================================================================
+   LESSON THEME — shared look for every lesson
+   University of Idaho Library lesson template
+   ------------------------------------------------------------------
+   You never need to edit this file to change a lesson's content.
+   Colors are defined once, at the top, so they can be changed in one place.
+================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Merriweather:wght@400;700;900&display=swap');
+
+/* ---------- Colors and sizes: change them here, in one place ---------- */
+:root {
+  /* Brand colors (U of Idaho) */
+  --gold:         #F1B300;  /* Pride Gold: labels, buttons, borders */
+  --gold-dark:    #d9a200;  /* gold buttons on hover */
+  --black:        #191919;  /* text, header, footer */
+  --white:        #FFFFFF;
+
+  /* Text */
+  --text-muted:   #5a5a5a;  /* secondary text on light backgrounds (7:1 contrast) */
+  --text-on-dark: #b3b3b3;  /* secondary text on the black header and footer (8.4:1) */
+  --link-hover:   #7a5c00;
+
+  /* Backgrounds */
+  --light-bg:     #F8F7F4;  /* image panels, quiz panels */
+  --cream:        #FFFBEE;  /* BOX background, selected choice */
+  --notice-bg:    #FFF8E1;  /* "Welcome back", "Almost there", file picker */
+  --problem-bg:   #FFF3C4;  /* preview page: problems box */
+  --preview-bar:  #1d3b6b;  /* preview page: blue banner */
+  --hover-bg:     #eeeae0;  /* choice under the mouse */
+  --track:        #e8e6e1;  /* empty part of the progress bar */
+
+  /* Lines and controls */
+  --line:         #e0ded8;  /* light borders */
+  --control:      #8a8a8a;  /* text-box borders, disabled buttons (3:1 contrast) */
+  --button-hover: #333333;  /* black buttons on hover */
+
+  /* Right and wrong answers */
+  --correct:      #2E7D32;
+  --correct-bg:   #e8f5e9;
+  --incorrect:    #B71C1C;  /* 5.4:1 on its background */
+  --incorrect-bg: #ffebee;
+
+  /* Size */
+  --max-width:    780px;    /* width of the lesson column */
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 18px; scroll-padding-top: 6rem; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+body { font-family: 'Lato', sans-serif; color: var(--black); background: var(--white); line-height: 1.7; }
+h1, h2, h3, h4 { font-family: 'Merriweather', serif; line-height: 1.3; }
+a { color: var(--black); text-underline-offset: 3px; }
+a:hover { color: var(--link-hover); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--black); outline-offset: 2px; }
+img { max-width: 100%; display: block; }
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+ul, ol { margin: 0 0 1rem 1.25rem; }
+li { margin-bottom: 0.4rem; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
+
+.skip-link {
+  position: absolute; top: -100%; left: 1rem; z-index: 200;
+  background: var(--gold); color: var(--black); font-weight: 700;
+  padding: 0.5rem 1rem; border-radius: 0 0 4px 4px; text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* ---------- Header, progress bar, footer ---------- */
+.site-header {
+  background: var(--black); color: var(--white);
+  padding: 0.9rem 1.5rem; display: flex; align-items: center; gap: 1rem;
+  position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.site-header .logo-bar { width: 5px; height: 36px; background: var(--gold); border-radius: 2px; flex-shrink: 0; }
+.site-header h1 { font-family: 'Lato', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.03em; }
+.site-header .subtitle { font-size: 0.75rem; color: var(--text-on-dark); font-weight: 300; margin: 2px 0 0; }
+
+.progress-bar-wrap { background: var(--track); height: 5px; position: sticky; top: 0; }
+.progress-bar-fill { height: 100%; background: var(--gold); width: 5%; transition: width 0.4s ease; }
+
+footer { background: var(--black); color: var(--text-on-dark); text-align: center; padding: 1.5rem; font-size: 0.8rem; }
+footer p { margin: 0; }
+footer .lesson-name { color: var(--gold); }
+footer .save-note { color: var(--text-on-dark); margin-top: 0.4rem; }
+footer .btn-text { color: var(--gold); font-size: 0.85rem; }
+footer .btn-text:focus-visible { outline-color: var(--gold); }
+
+/* ---------- Page layout ---------- */
+main { max-width: var(--max-width); margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+
+.course-intro { text-align: center; padding: 3rem 0 2rem; border-bottom: 3px solid var(--gold); margin-bottom: 3rem; }
+.course-intro h2 { font-size: 1.7rem; margin-bottom: 0.75rem; }
+.course-intro p { color: var(--text-muted); font-size: 0.95rem; max-width: 540px; margin: 0 auto; }
+
+.unit { margin-bottom: 3rem; scroll-margin-top: 6rem; }
+.unit > h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+.unit h2:focus { outline: none; }
+.unit h3 { font-size: 1.1rem; margin: 2rem 0 0.75rem; }
+.unit-label {
+  background: var(--gold); color: var(--black); font-size: 0.7rem; font-weight: 900;
+  letter-spacing: 0.12em; text-transform: uppercase; display: inline-block;
+  padding: 0.3rem 0.8rem; border-radius: 2px; margin-bottom: 1rem;
+}
+/* Quizzes sit in a shaded panel */
+.unit-quiz { background: var(--light-bg); border-radius: 10px; padding: 2rem; }
+.unit-quiz > h2 { font-size: 1.2rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--line); }
+@media (max-width: 600px) { .unit-quiz { padding: 1.25rem; } }
+
+.section-divider { border: none; border-top: 3px solid var(--gold); margin: 3rem 0; opacity: 0.3; }
+
+/* ---------- Images ---------- */
+.figure { margin: 1.5rem 0; }
+.figure img { width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.12); }
+.figure figcaption { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-top: 0.4rem; }
+.image-aside {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;
+  background: var(--light-bg); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+}
+.image-aside .figure { margin: 0; }
+.image-aside .aside-text { display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; }
+.image-aside .aside-text p { margin: 0; }
+@media (max-width: 600px) { .image-aside { grid-template-columns: 1fr; } }
+
+/* ---------- Buttons ---------- */
+.btn-link {
+  display: inline-block; align-self: flex-start; background: var(--gold); color: var(--black);
+  font-weight: 700; font-size: 0.9rem; padding: 0.6rem 1.2rem; border-radius: 4px;
+  text-decoration: none; transition: background 0.2s, transform 0.1s; margin: 0.25rem 0 1rem;
+}
+.btn-link:hover { background: var(--gold-dark); color: var(--black); transform: translateY(-1px); }
+.btn-link::after { content: " ↗"; font-size: 0.8em; }
+.btn-check, .btn-continue {
+  border: none; border-radius: 4px; cursor: pointer; font-family: 'Lato', sans-serif; font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-check { background: var(--black); color: var(--white); padding: 0.6rem 1.4rem; font-size: 0.95rem; margin-top: 0.75rem; }
+.btn-check:hover { background: var(--button-hover); }
+.btn-check:disabled { background: var(--control); cursor: not-allowed; }
+.btn-continue { background: var(--gold); color: var(--black); padding: 0.75rem 2rem; font-size: 1rem; font-weight: 900; letter-spacing: 0.04em; }
+.btn-continue:hover { background: var(--gold-dark); transform: translateY(-1px); }
+.btn-text {
+  background: none; border: none; padding: 0.5rem 0.25rem; font-family: 'Lato', sans-serif;
+  font-size: 0.95rem; font-weight: 700; color: var(--black); text-decoration: underline; cursor: pointer;
+}
+
+/* ---------- The three box kinds ---------- */
+.box, .tip, .after { border-radius: 0 6px 6px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.box-title { display: block; font-weight: 900; margin-bottom: 0.35rem; font-family: 'Lato', sans-serif; font-size: 1rem; }
+/* BOX: tasks and notes */
+.box { background: var(--cream); border-left: 4px solid var(--gold); }
+/* TIP: advice */
+.tip { background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--black); }
+/* AFTER ANSWERS: explanations that appear once questions are answered */
+.after { background: var(--light-bg); border-left: 4px solid var(--gold); }
+.unit-quiz .after { background: var(--white); }
+.after .box-title::before { content: "✓ "; color: var(--correct); }
+.box ul, .box ol, .tip ul, .tip ol, .after ul, .after ol { margin-bottom: 0.5rem; }
+
+/* ---------- Cards (one style everywhere) ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.card {
+  min-width: 0; overflow-wrap: break-word; background: var(--white); border-radius: 8px;
+  padding: 1rem 1.25rem; box-shadow: 0 1px 6px rgba(0,0,0,0.08); border-top: 4px solid var(--gold);
+}
+.card .card-icon { font-size: 1.6rem; display: block; margin-bottom: 0.4rem; line-height: 1.2; }
+.card h3, .unit .card h3 { font-family: 'Lato', sans-serif; font-size: 1rem; font-weight: 900; margin: 0 0 0.3rem; }
+.card p, .card li { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
+.card p { margin-bottom: 0.6rem; }
+.card .btn-link { margin-bottom: 0; }
+
+/* ---------- Video ---------- */
+.video { margin: 1.5rem 0; }
+.video-frame { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; background: var(--black); border-radius: 6px; overflow: hidden; }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-note { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+/* ---------- Questions (one style everywhere) ---------- */
+.question {
+  background: var(--white); border: 1px solid var(--line); border-radius: 8px;
+  padding: 1.25rem 1.25rem 1.1rem; margin: 1.5rem 0; scroll-margin-top: 6rem;
+}
+.question fieldset { border: none; }
+.question-text { font-weight: 700; margin-bottom: 0.75rem; font-size: 1rem; display: block; }
+.question-num {
+  display: inline-block; background: var(--black); color: var(--white); font-size: 0.75rem; font-weight: 900;
+  padding: 0.15rem 0.5rem; border-radius: 3px; margin-right: 0.5rem; vertical-align: middle;
+}
+.choices { display: flex; flex-direction: column; gap: 0.5rem; }
+.choice {
+  display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 0.6rem 0.9rem;
+  border-radius: 5px; border: 2px solid transparent; transition: background 0.15s, border-color 0.15s;
+}
+.choice:hover { background: var(--hover-bg); }
+.choice:focus-within { outline: 3px solid var(--black); outline-offset: 1px; }
+.choice input { accent-color: var(--gold); width: 18px; height: 18px; flex-shrink: 0; }
+.choice.selected { border-color: var(--gold); background: var(--cream); }
+.choice.is-right { border-color: var(--correct); background: var(--correct-bg); }
+.choice.is-wrong { border-color: var(--incorrect); background: var(--incorrect-bg); cursor: not-allowed; }
+.choice.is-right::after { content: " ✓"; font-weight: 900; color: var(--correct); }
+.choice.is-wrong::after { content: " ✗"; font-weight: 900; color: var(--incorrect); }
+.hint-text { font-size: 0.85rem; color: var(--text-muted); margin: 0.5rem 0 0; font-style: italic; }
+.fillin { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.fillin input {
+  border: 2px solid var(--control); border-radius: 4px; padding: 0.5rem 0.75rem; font-family: 'Lato', sans-serif;
+  font-size: 1rem; width: 240px; max-width: 100%;
+}
+.fillin input:focus { outline: 3px solid var(--black); outline-offset: 2px; border-color: var(--gold); }
+.fillin .btn-check { margin-top: 0; }
+.feedback { margin-top: 0.75rem; padding: 0.6rem 1rem; border-radius: 5px; font-weight: 700; font-size: 0.95rem; }
+.feedback:empty { display: none; }
+.feedback.correct { background: var(--correct-bg); color: var(--correct); }
+.feedback.incorrect { background: var(--incorrect-bg); color: var(--incorrect); }
+.feedback.neutral { background: var(--cream); color: var(--black); }
+
+/* ---------- Continue, "almost there", welcome back ---------- */
+.continue-wrap { text-align: center; padding: 2rem 0 0; }
+.continue-wrap p { color: var(--text-muted); font-size: 0.95rem; }
+.pending-note {
+  margin: 1.5rem auto 0; max-width: 34rem; padding: 0.85rem 1.1rem; border: 2px solid var(--gold);
+  border-left-width: 6px; border-radius: 4px; background: var(--notice-bg); text-align: center; font-weight: 700;
+}
+.pending-note a { font-weight: 900; }
+.resume-banner { background: var(--notice-bg); border-left: 6px solid var(--gold); border-radius: 6px; padding: 1.1rem 1.4rem; margin: 0 0 1.5rem; }
+.resume-banner p { margin: 0 0 0.8rem; }
+.resume-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+
+/* ---------- Finish screen and credits ---------- */
+.finish {
+  text-align: center; background: var(--white); border: 2px solid var(--gold); border-radius: 6px;
+  padding: 2rem 1.5rem; margin-top: 2rem; scroll-margin-top: 6rem;
+}
+.finish h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.finish h2:focus { outline: none; }
+.finish .figure { max-width: 420px; margin: 1.25rem auto 0.75rem; }
+.finish .screenshot-note { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.95rem; }
+.credits { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.25rem; font-size: 0.9rem; color: var(--text-muted); }
+.credits h2 { font-size: 1.05rem; margin: 0 0 0.5rem; color: var(--black); }
+.credits summary { cursor: pointer; font-weight: 700; color: var(--black); }
+.credits ul { margin: 0.75rem 0; padding-left: 1.25rem; display: grid; gap: 0.45rem; }
+
+/* ---------- "This part is being updated" (students) ---------- */
+.being-updated { background: var(--light-bg); border: 2px dashed var(--control); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; color: var(--text-muted); font-style: italic; }
+
+/* ---------- Preview page only ---------- */
+.preview-banner { background: var(--preview-bar); color: var(--white); text-align: center; padding: 0.6rem 1rem; font-size: 0.9rem; }
+.preview-banner strong { color: var(--gold); }
+.problems { background: var(--problem-bg); border: 3px solid var(--gold); border-radius: 6px; padding: 1.1rem 1.4rem; margin: 0 0 2rem; }
+.problems h2 { font-family: 'Lato', sans-serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+.problems li { margin-bottom: 0.5rem; }
+.problems code, .problem-flag code { background: var(--white); padding: 0 0.25rem; border-radius: 3px; }
+.problems-ok { background: var(--correct-bg); border-color: var(--correct); }
+.problem-flag { background: var(--problem-bg); border: 2px solid var(--gold); border-radius: 4px; padding: 0.4rem 0.75rem; font-size: 0.85rem; margin: 0.5rem 0; }
+.load-error { max-width: 40rem; margin: 3rem auto; padding: 1.5rem; border: 3px solid var(--gold); border-radius: 6px; background: var(--notice-bg); }
+
+/* ---------- "Choose lesson file" screen (page opened from the computer) ---------- */
+.file-pick { display: inline-block; }
+.file-pick:focus-within { outline: 3px solid var(--black); outline-offset: 2px; }
+.small-note { font-size: 0.9rem; color: var(--text-muted); }
+
+/* ---------- Single-file review copy: banner at the top ---------- */
+.review-banner { background: var(--gold); color: var(--black); padding: 0.6rem 1rem; text-align: center; font-size: 0.95rem; position: relative; z-index: 300; }
