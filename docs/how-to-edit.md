@@ -262,7 +262,7 @@ REVEAL: The answer is Listenbourg. You can keep going.
 - `ACCEPT:` lists the accepted words, separated by commas: `ACCEPT: grok, ai, artificial intelligence`
 - Keep a question's lines together: no blank lines inside a question.
 - An answer counts if it **contains** any accepted word. Capitals and punctuation are ignored.
-- Students get **3 tries**. "(2 tries left)" is added to the WRONG message for you.
+- Students get **3 tries**. They are not told how many are left.
   After the 3rd wrong try, the `REVEAL:` message is shown and they can continue.
 
 **When to use a fill-in:** only when the answer is **one unmistakable word or name**

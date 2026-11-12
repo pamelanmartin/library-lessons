@@ -291,7 +291,7 @@ REVEAL: The answer is Listenbourg. You can keep going.
 - `ACCEPT:` lists the accepted answers, separated by commas. Include likely misspellings.
 - An answer counts if it **contains** any accepted word, so "the Listenbourg map" is accepted. Capitals and punctuation are ignored.
 - Because of that, keep accepted words specific. A short word such as `no` would also match "not sure" or "I don't know".
-- Students get 3 tries (the number is a template setting). "(2 tries left before we show the answer.)" is added for you.
+- Students get 3 tries (the number is a template setting). They are not told how many tries remain.
 - After the last wrong try, the `REVEAL:` message is shown and the student can continue.
 - Use a fill-in only when the answer is one unmistakable word or name. Aim for no more than two or three per lesson.
 
@@ -376,6 +376,7 @@ These affect **every** lesson.
 | Every word the template adds (buttons, labels, messages) | `WORDING` list just below it | Change only the words between the quotes |
 | Colors and the lesson column's width | The list at the top of `template/lesson-theme.css` | Change the value after the colon |
 
+- A `WORDING` line can be left empty (`''`) to show nothing. The four "tries left" lines are empty on purpose, so students are not told in advance that the answer will be revealed.
 - In `WORDING`, keep anything in curly brackets, such as `{n}` or `{title}`. Those are filled in automatically; you may move them within the sentence.
 - If you change a color, check that text on it still has a contrast of at least 4.5:1.
 - Everything below those lists is the program itself. Changing it needs someone comfortable with JavaScript and CSS.
