@@ -5,7 +5,7 @@ FROM: A sample from the University of Idaho Library lesson template
 SECTION: Welcome
 
 IMAGE: sample-picture.jpg
-ALT: A black circle inside a gold square frame
+ALT: A black circle inside a gold rectangle frame
 CAPTION: A sample picture
 CREDIT: Sample picture: made for the lesson template.
 PLACE: beside text
@@ -104,6 +104,6 @@ END AFTER ANSWERS
 
 FINISH: You've finished the example lesson!
 IMAGE: sample-picture.jpg
-ALT: A black circle inside a gold square frame
+ALT: A black circle inside a gold rectangle frame
 **Be careful out there!**
 END FINISH
