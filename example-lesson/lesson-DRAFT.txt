@@ -34,9 +34,9 @@ WRONG: Not quite. Look at the picture again.
 QUESTION: Which of these shapes appear in the picture?
 TYPE: select all
 - A circle (correct)
-- A square (correct)
+- A rectangle (correct)
 - A triangle
-RIGHT: Correct! A circle inside a square.
+RIGHT: Correct! A circle inside a rectangle.
 WRONG: Not quite. Change your choices and try again.
 
 SECTION: Cards, tips and videos
