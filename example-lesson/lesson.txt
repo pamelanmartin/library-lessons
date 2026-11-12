@@ -1,0 +1,109 @@
+LESSON: Example Lesson
+SUBTITLE: A Short Lesson That Shows Every Feature
+FROM: A sample from the University of Idaho Library lesson template
+
+SECTION: Welcome
+
+IMAGE: sample-picture.jpg
+ALT: A black circle inside a gold square frame
+CAPTION: A sample picture
+CREDIT: Sample picture: made for the lesson template.
+PLACE: beside text
+
+**This is an example lesson.** Copy it to start a new lesson, then replace the text.
+
+Paragraphs can include *italics* and [links](https://www.lib.uidaho.edu/).
+
+BUTTON: Visit the library website | https://www.lib.uidaho.edu/
+
+BOX: Your task
+Read this section, then answer the quiz below.
+END BOX
+
+QUIZ: Getting Started
+
+QUESTION: What color is the frame in the picture?
+TYPE: choice
+- Black
+- Gold (correct)
+- Silver
+HINT: Hint: look at the edges of the picture.
+RIGHT: Correct! The frame is Pride Gold.
+WRONG: Not quite. Look at the picture again.
+
+QUESTION: Which of these shapes appear in the picture?
+TYPE: select all
+- A circle (correct)
+- A square (correct)
+- A triangle
+RIGHT: Correct! A circle inside a square.
+WRONG: Not quite. Change your choices and try again.
+
+SECTION: Cards, tips and videos
+
+HEADING: A set of cards
+
+CARDS:
+CARD: 👤 First card
+Each card has an optional emoji, a title and some text.
+CARD: 📄 Second card
+Cards sit side by side on wide screens.
+- Lists work in cards too
+CARD: 🔄 Third card
+On phones, they stack.
+END CARDS
+
+TIP: A tip box
+Tips are for advice. They always look like this.
+END TIP
+
+VIDEO: https://www.youtube.com/watch?v=LWLadJFI8Pk
+TITLE: In Event of Moon Disaster
+START: 4:41
+CREDIT: In Event of Moon Disaster: MIT Center for Advanced Virtuality, 2020.
+
+Steps can be numbered:
+
+1. Save the image.
+2. Upload it to a reverse image search.
+3. Look for older copies.
+
+PRACTICE: Try a Fill-in
+
+QUESTION: What is the name of the university?
+TYPE: fill-in
+ACCEPT: idaho, uidaho
+RIGHT: Correct! The University of Idaho.
+WRONG: Not quite. Look at the top of the page.
+REVEAL: The answer is Idaho (the University of Idaho). You can keep going.
+
+AFTER ANSWERS: What really happened
+This box stays hidden until the question above it is answered. Use it for explanations that would give away an answer.
+END AFTER ANSWERS
+
+SECTION: Wrap-up
+
+QUESTION: Ready to finish?
+TYPE: choice
+- Yes (correct)
+- Not yet
+RIGHT: Great!
+WRONG: Take your time, then choose Yes.
+
+AFTER ANSWERS: Let's review
+- Lessons are written in plain text.
+- Numbers and buttons are added for you.
+
+QUESTION: Choose the correct statements.
+TYPE: select all
+- Lessons are plain text. (correct)
+- You never type question numbers. (correct)
+RIGHT: Correct! Both are true.
+WRONG: Not quite. Both statements are true.
+END AFTER ANSWERS
+
+FINISH: You've finished the example lesson!
+IMAGE: sample-picture.jpg
+ALT: A black circle inside a gold square frame
+**Be careful out there!**
+END FINISH

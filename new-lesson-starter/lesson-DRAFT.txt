@@ -1,0 +1,19 @@
+LESSON: Your Lesson Title
+SUBTITLE: A short line that says what the lesson covers
+FROM: An interactive workshop from the University of Idaho Library
+
+SECTION: Your first section title
+
+Replace this paragraph with your own text. A blank line starts a new paragraph.
+
+QUESTION: Replace this with your first question
+TYPE: choice
+- A wrong answer
+- The right answer (correct)
+- Another wrong answer
+RIGHT: Correct! Say why in a sentence.
+WRONG: Not quite. Give a nudge toward the right answer.
+
+FINISH: You've finished Your Lesson Title!
+Replace this with a closing sentence.
+END FINISH
